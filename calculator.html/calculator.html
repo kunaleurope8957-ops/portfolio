@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal - Premium Dev Calculator</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --container-bg: #1e293b;
+            --text-color: #f8fafc;
+            --border-color: #334155;
+            --display-color: #38bdf8;
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg-color); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; padding: 10px; box-sizing: border-box; }
+        .calculator { background: var(--container-bg); padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; max-width: 320px; border: 1px solid var(--border-color); }
+        .brand { color: var(--display-color); font-size: 0.85rem; text-align: center; margin-bottom: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .display { width: 100%; height: 65px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 12px; font-size: 2rem; text-align: right; padding: 15px; box-sizing: border-box; margin-bottom: 20px; color: var(--display-color); font-weight: bold; overflow: hidden; text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+        .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        button { padding: 18px; font-size: 1.3rem; border: none; border-radius: 12px; background: #334155; color: var(--text-color); cursor: pointer; font-weight: 600; transition: all 0.2s ease; }
+        button:hover { background: #475569; transform: translateY(-2px); }
+        button:active { transform: translateY(0); }
+        .operator { background: #0284c7; color: white; }
+        .operator:hover { background: #0369a1; }
+        .clear { background: #ef4444; color: white; }
+        .clear:hover { background: #dc2626; }
+        .equal { background: #22c55e; color: white; }
+        .equal:hover { background: #16a34a; }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <div class="brand">Kunal Dev 🇪🇺 🇩🇰</div>
+    <input type="text" class="display" id="screen" readonly value="0">
+    
+    <div class="buttons">
+        <button class="clear" onclick="clearScreen()">C</button>
+        <button class="operator" onclick="press('/')">/</button>
+        <button class="operator" onclick="press('*')">*</button>
+        <button class="operator" onclick="press('-')">-</button>
+        
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button class="operator" onclick="press('+')">+</button>
+        
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('.')">.</button>
+        
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('0')">0</button>
+        
+        <!-- Equal button now takes 4 columns at bottom for massive premium look -->
+        <button class="equal" onclick="calculate()" style="grid-column: span 4; margin-top: 5px;">=</button>
+    </div>
+</div>
+
+<script>
+    const screen = document.getElementById('screen');
+
+    function press(value) {
+        // Agar pehle se default '0' hai ya 'Error' hai, toh use naye number se badal dein
+        if (screen.value === '0' || screen.value === 'Error') {
+            if (value === '.') {
+                screen.value = '0.'; // Agar pehle hi dot lagayein toh 0. bane
+            } else {
+                screen.value = value;
+            }
+        } else {
+            // Ek hi number me do baar dot (.) na lagne paye uski checking
+            if (value === '.' && screen.value.includes('.')) {
+                // Agar aakhri character check karna ho toh advanced calculator me kaam aata hai
+                const lastChar = screen.value.slice(-1);
+                if(['+', '-', '*', '/'].includes(lastChar)) return;
+            }
+            screen.value += value;
+        }
+    }
+
+    function clearScreen() {
+        screen.value = '0'; // Pure placeholder behavior ke liye vapas 0 set karein
+    }
+
+    function calculate() {
+        // Agar screen khali ya sirf 0 ho toh calculate mat karo
+        if (screen.value === '0' || screen.value === '') return;
+        
+        try {
+            // Advanced eval math solving logic
+            let solution = eval(screen.value);
+            screen.value = solution;
+        } catch (error) {
+            screen.value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>

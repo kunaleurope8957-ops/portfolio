@@ -1,100 +1,121 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunal | Frontend Developer Portfolio</title>
+    <title>Kunal - Frontend Developer Portfolio (Target: Denmark)</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+        :root {
+            --bg-color: #f8f9fa;
+            --container-bg: #ffffff;
+            --text-color: #212529;
+            --subtitle-color: #6c757d;
+            --border-color: #dee2e6;
+            --card-bg: #f1f3f5;
         }
-        header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #334155;
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --subtitle-color: #a0a0a0;
+            --border-color: #333333;
+            --card-bg: #2d2d2d;
         }
-        h1 {
-            color: #38bdf8;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #38bdf8;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 8px;
-            margin-top: 30px;
-        }
-        section {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        ul {
-            list-style-type: '⚡ ';
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 15px; background-color: var(--bg-color); color: var(--text-color); transition: all 0.3s ease; }
+        .container { max-width: 800px; margin: auto; background: var(--container-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); box-sizing: border-box; }
+        .header-flex { display: flex; justify-content: space-between; align-items: flex-start; }
+        h1 { color: #0d6efd; margin-bottom: 5px; font-size: 2.2rem; margin-top: 0; }
+        .subtitle { font-size: 1.15rem; color: var(--subtitle-color); margin-top: 0; font-weight: 500; }
+        .flags-bar { font-size: 1.5rem; margin-top: 5px; letter-spacing: 3px; }
+        .theme-btn { background: #0d6efd; color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 0.9rem; flex-shrink: 0; }
+        .visa-status { background: #e7f1ff; padding: 15px; border-left: 6px solid #d0001c; margin: 20px 0; border-radius: 4px; font-weight: 500; color: #212529; font-size: 0.95rem; line-height: 1.7; }
+        [data-theme="dark"] .visa-status { background: #1a2634; color: #e0e0e0; }
+        h2 { border-bottom: 2px solid var(--border-color); padding-bottom: 8px; color: var(--text-color); margin-top: 25px; font-size: 1.35rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; font-size: 0.95rem; }
+        
+        /* Project Cards Styling */
+        .project-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px; }
+        @media(min-width: 600px) { .project-grid { grid-template-columns: 1fr 1fr; } }
+        .project-card { background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .project-card h3 { margin-top: 0; color: #0d6efd; font-size: 1.1rem; }
+        .project-card p { font-size: 0.9rem; margin-bottom: 10px; color: var(--text-color); }
+        .tag { background: #0d6efd; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        
+        .contact-section p { margin: 8px 0; font-size: 1rem; word-break: break-all; }
+        a { color: #0d6efd; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hello, I'm Kunal</h1>
-        <p>Junior Frontend Developer | Building the Web for Tomorrow</p>
-    </header>
+    <div class="container">
+        <!-- Personal Branding -->
+        <div class="header-flex">
+            <div>
+                <h1>Kunal 🇩🇰</h1>
+                <p class="subtitle">Junior Frontend Developer / IT Specialist</p>
+                <div class="flags-bar">🇩🇰 🇪🇺 🇫🇮 🇳🇱 🇳🇴 🇸🇪</div>
+            </div>
+            <button class="theme-btn" id="themeToggle">🌓 Mode</button>
+        </div>
 
-    <section>
-        <h2>About Me</h2>
-        <p>I am a passionate frontend developer based in India, currently building responsive web projects and scaling my technical skills to create impact globally.</p>
-    </section>
+        <!-- Relocation & Visa Section Target: Denmark Focus -->
+        <div class="visa-status">
+            👑 <strong>Primary Target Market:</strong> Denmark 🇩🇰 (Focusing on Danish Collective Agreements & 2027 Market Entry) <br>
+            🌍 <strong>Secondary Markets:</strong> Finland 🇫🇮, Netherlands 🇳🇱, Norway 🇳🇴, Sweden 🇸🇪 <br>
+            自由 <strong>Visa & Relocation Status:</strong> Open to International Relocation & Seeking Work Permit Sponsorship (90+ Days) <br>
+            ⚡ <strong>Availability:</strong> Dedicated 16-Hour Daily Learning Routine (Highly Focused Professional)
+        </div>
 
-    <section>
-        <h2>Skills</h2>
+        <h2>💻 Technical Skills & Stack</h2>
         <ul>
-            <li>HTML5 (Semantic & Clean Code)</li>
-            <li>CSS3 (Responsive Design)</li>
-            <li>JavaScript (Basics)</li>
-            <li>GitHub & Version Control</li>
+            <li><strong>Core Languages:</strong> HTML5, CSS3, JavaScript (Basics & Learning)</li>
+            <li><strong>Tools & Version Control:</strong> Git, GitHub, VS Code (Text Editor)</li>
+            <li><strong>Focus Areas:</strong> Responsive Web Design, Clean UI, Semantic Layouts</li>
         </ul>
-    </section>
 
-    <section>
-        <h2>Connect With Me</h2>
-        <p>Email: <a href="mailto:Kunal.europe8957@gmail.com">Kunal.europe8957@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com" target="_blank">My GitHub Profile</a></p>
-    </section>
-</body>
-</html>
-<body>
-</body>
-</html>
+        <h2>📂 Featured Projects (Learning Journey)</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>🌐 Personal Live Portfolio</h3>
+                <p>A fully responsive portfolio built with advanced CSS variables and a live dark/light mode toggle function.</p>
+                <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JavaScript</span>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>📱 Responsive UI Layouts</h3>
+                <p>Developing clean, mobile-first semantic web templates optimized for modern ATS parsing systems.</p>
+                <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">Git</span>
+            </div>
+        </div>
 
-<body>
-  
-</body>
+        <h2>💼 Code Repository & Journey</h2>
+        <ul>
+            <li><strong>Git & GitHub Setup</strong> | kunaleurope8957-ops
+                <ul>
+                    <li>Managing web development files and source code using version control systems.</li>
+                </ul>
+            </li>
+        </ul>
 
+        <h2>📧 Contact & Professional Links</h2>
+        <div class="contact-section">
+            <p>📩 <strong>Email Recruiter Direct Link:</strong> <a href="mailto:kunal.europe8957@gmail.com">kunal.europe8957@gmail.com</a></p>
+            <p>🐙 <strong>GitHub Live Repository:</strong> <a href="https://github.com" target="_blank">://github.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.body.removeAttribute('data-theme');
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        });
+    </script>
+</body>
 </html>
