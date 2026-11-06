@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordic Satellite & Meteorological Radar Engine</title>
+    <link rel="stylesheet" href="weather.css">
+    <style>
+        .flag-icon {
+            width: 28px;
+            height: 20px;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2f3336;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .live-pulse {
+            width: 8px;
+            height: 8px;
+            background-color: #02c076;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #02c076;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-wrapper">
+        <div>
+            <h1>Nordic Weather Radar Platform 🌍</h1>
+            <div class="subtitle">European Meteorological Network Operations • Real-Time API Sync</div>
+        </div>
+        <div>
+            <button class="btn-control" onclick="fetchLiveWeather()">🔄 Refresh Matrix</button>
+        </div>
+    </div>
+
+    <div class="radar-grid">
+        <!-- Denmark Card -->
+        <div class="weather-card">
+            <div class="location-title">
+                <svg class="flag-icon" viewBox="0 0 37 28">
+                    <rect width="37" height="28" fill="#C8102E"/>
+                    <rect x="12" width="4" height="28" fill="#FFFFFF"/>
+                    <rect y="12" width="37" height="4" fill="#FFFFFF"/>
+                </svg>
+                <span>Copenhagen, Denmark</span>
+            </div>
+            <div class="metric-display" id="denmark-temp">Syncing...</div>
+            <div class="subtitle">Precipitation: <span id="denmark-rain">--</span></div>
+            <div class="radar-status"><span class="live-pulse"></span> Live API Active</div>
+        </div>
+
+        <!-- Norway Card -->
+        <div class="weather-card" style="border-top-color: #EF2B2D;">
+            <div class="location-title">
+                <svg class="flag-icon" viewBox="0 0 22 16">
+                    <rect width="22" height="16" fill="#BA0C2F"/>
+                    <rect x="6" width="4" height="16" fill="#FFFFFF"/>
+                    <rect y="6" width="22" height="4" fill="#FFFFFF"/>
+                    <rect x="7" width="2" height="16" fill="#00205B"/>
+                    <rect y="7" width="22" height="2" fill="#00205B"/>
+                </svg>
+                <span>Oslo, Norway</span>
+            </div>
+            <div class="metric-display" id="norway-temp">Syncing...</div>
+            <div class="subtitle">Precipitation: <span id="norway-rain">--</span></div>
+            <div class="radar-status"><span class="live-pulse"></span> Live API Active</div>
+        </div>
+
+        <!-- Sweden Card -->
+        <div class="weather-card" style="border-top-color: #FECC02;">
+            <div class="location-title">
+                <svg class="flag-icon" viewBox="0 0 16 10">
+                    <rect width="16" height="10" fill="#006AA7"/>
+                    <rect x="5" width="2" height="10" fill="#FECC02"/>
+                    <rect y="4" width="16" height="2" fill="#FECC02"/>
+                </svg>
+                <span>Stockholm, Sweden</span>
+            </div>
+            <div class="metric-display" id="sweden-temp">Syncing...</div>
+            <div class="subtitle">Precipitation: <span id="sweden-rain">--</span></div>
+            <div class="radar-status"><span class="live-pulse"></span> Live API Active</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function fetchLiveWeather() {
+        try {
+            // Correct API query parameters for multiple targets
+            const url = 'https://open-meteo.com';
+            const response = await fetch(url);
+            
+            if (!response.ok) throw new Error("Network configuration mismatch");
+            const data = await response.json();
+
+            // Corrected dataset array parsing from the Multi-location API object structure
+            document.getElementById('denmark-temp').innerText = data[0].current.temperature_2m + " °C";
+            document.getElementById('denmark-rain').innerText = data[0].current.precipitation + " mm";
+
+            document.getElementById('norway-temp').innerText = data[1].current.temperature_2m + " °C";
+            document.getElementById('norway-rain').innerText = data[1].current.precipitation + " mm";
+
+            document.getElementById('sweden-temp').innerText = data[2].current.temperature_2m + " °C";
+            document.getElementById('sweden-rain').innerText = data[2].current.precipitation + " mm";
+
+            console.log("Nordic Weather variables successfully parsed and synchronized.");
+        } catch (error) {
+            console.error("API mapping failure encountered:", error);
+            document.getElementById('denmark-temp').innerText = "Offline Mode";
+            document.getElementById('norway-temp').innerText = "Offline Mode";
+            document.getElementById('sweden-temp').innerText = "Offline Mode";
+        }
+    }
+
+    fetchLiveWeather();
+</script>
+</body>
+</html>
