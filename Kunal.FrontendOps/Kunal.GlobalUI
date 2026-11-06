@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kunal | Frontend Developer Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-8 py-5 border-b border-gray-800">
+    <h1 class="text-xl font-bold tracking-wider text-emerald-400">KUNAL.DEV</h1>
+    <ul class="flex space-x-6 text-sm font-medium text-gray-300">
+      <li><a href="#projects" class="hover:text-emerald-400 transition">Projects</a></li>
+      <li><a href="#roadmap" class="hover:text-emerald-400 transition">Roadmap</a></li>
+      <li><a href="#contact" class="hover:text-emerald-400 transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-24 px-4">
+    <span class="text-xs uppercase tracking-widest text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800/50 mb-4">
+      Nordic Bound • Copenhagen 2028 ✈️
+    </span>
+    <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+      Building Modern Frontend UI
+    </h2>
+    <p class="max-w-xl text-gray-400 text-base sm:text-lg mb-8">
+      17-year-old developer crafting clean, responsive, and robust web applications with HTML, CSS, JavaScript, and Tailwind.
+    </p>
+    <a href="#projects" class="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold px-6 py-3 rounded-lg shadow-lg transition">
+      Explore My Work
+    </a>
+  </section>
+
+</body>
+</html>
