@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danish Language Booster 🇩🇰</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white font-sans min-h-screen p-4 md:p-8 flex items-center justify-center">
+
+  <div class="max-w-2xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+    
+    <!-- 🇩🇰 Header -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <h1 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">
+          Danish Booster 🇩🇰
+        </h1>
+        <p class="text-xs text-slate-400 mt-1 font-mono">Daily Phrases & Transit Vocabulary for Copenhagen</p>
+      </div>
+      <span class="text-3xl">🇩🇰</span>
+    </div>
+
+    <!-- Category Selector Tabs -->
+    <div class="flex gap-2 border-b border-slate-800 pb-3">
+      <button onclick="filterCategory('all')" class="cat-btn bg-red-600/30 border border-red-500/50 text-red-300 px-3 py-1.5 rounded-xl text-xs font-mono font-bold">All Phrases</button>
+      <button onclick="filterCategory('transit')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-xl text-xs font-mono">🚆 Transit</button>
+      <button onclick="filterCategory('daily')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-xl text-xs font-mono">💬 Daily Talk</button>
+    </div>
+
+    <!-- Interactive Flashcard Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="cardsGrid">
+      
+      <!-- Card 1 -->
+      <div class="card-item transit bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl hover:border-red-500/50 transition cursor-pointer" onclick="toggleCard(this)">
+        <span class="text-[10px] uppercase font-mono text-red-400 font-bold tracking-wider">Transit</span>
+        <h3 class="text-lg font-bold text-white mt-1">Hvor er stationen?</h3>
+        <p class="text-xs text-slate-400 font-mono italic">Pronunciation: Vohr er sta-shohn-en?</p>
+        <div class="answer hidden mt-3 pt-3 border-t border-slate-700/50 text-xs font-semibold text-teal-300">
+          🇬🇧 English: "Where is the station?"
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card-item daily bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl hover:border-red-500/50 transition cursor-pointer" onclick="toggleCard(this)">
+        <span class="text-[10px] uppercase font-mono text-red-400 font-bold tracking-wider">Daily Talk</span>
+        <h3 class="text-lg font-bold text-white mt-1">Mange tak!</h3>
+        <p class="text-xs text-slate-400 font-mono italic">Pronunciation: Mahn-geh tahk!</p>
+        <div class="answer hidden mt-3 pt-3 border-t border-slate-700/50 text-xs font-semibold text-teal-300">
+          🇬🇧 English: "Many thanks / Thank you very much!"
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-item transit bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl hover:border-red-500/50 transition cursor-pointer" onclick="toggleCard(this)">
+        <span class="text-[10px] uppercase font-mono text-red-400 font-bold tracking-wider">Transit</span>
+        <h3 class="text-lg font-bold text-white mt-1">En billet til København</h3>
+        <p class="text-xs text-slate-400 font-mono italic">Pronunciation: En bee-lyet teel Kuu-ben-hown</p>
+        <div class="answer hidden mt-3 pt-3 border-t border-slate-700/50 text-xs font-semibold text-teal-300">
+          🇬🇧 English: "One ticket to Copenhagen"
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card-item daily bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl hover:border-red-500/50 transition cursor-pointer" onclick="toggleCard(this)">
+        <span class="text-[10px] uppercase font-mono text-red-400 font-bold tracking-wider">Daily Talk</span>
+        <h3 class="text-lg font-bold text-white mt-1">Undskyld, taler du engelsk?</h3>
+        <p class="text-xs text-slate-400 font-mono italic">Pronunciation: Oon-skool, tah-ler doo eng-elsk?</p>
+        <div class="answer hidden mt-3 pt-3 border-t border-slate-700/50 text-xs font-semibold text-teal-300">
+          🇬🇧 English: "Excuse me, do you speak English?"
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card-item daily bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl hover:border-red-500/50 transition cursor-pointer" onclick="toggleCard(this)">
+        <span class="text-[10px] uppercase font-mono text-red-400 font-bold tracking-wider">Daily Talk</span>
+        <h3 class="text-lg font-bold text-white mt-1">Hvad koster det?</h3>
+        <p class="text-xs text-slate-400 font-mono italic">Pronunciation: Veh kos-ter deh?</p>
+        <div class="answer hidden mt-3 pt-3 border-t border-slate-700/50 text-xs font-semibold text-teal-300">
+          🇬🇧 English: "How much does it cost?"
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card-item transit bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl hover:border-red-500/50 transition cursor-pointer" onclick="toggleCard(this)">
+        <span class="text-[10px] uppercase font-mono text-red-400 font-bold tracking-wider">Transit</span>
+        <h3 class="text-lg font-bold text-white mt-1">Hvornår afgår toget?</h3>
+        <p class="text-xs text-slate-400 font-mono italic">Pronunciation: Vohr-naw ahf-gawr toh-get?</p>
+        <div class="answer hidden mt-3 pt-3 border-t border-slate-700/50 text-xs font-semibold text-teal-300">
+          🇬🇧 English: "When does the train leave?"
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Git Push Helper -->
+    <div class="bg-slate-800/30 border border-slate-800 p-4 rounded-2xl flex justify-between items-center text-xs font-mono text-slate-400">
+      <span>Target: 2027 Feb Relocation</span>
+      <span class="text-red-400 font-bold">Daily Danish Sprint 🇩🇰</span>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleCard(card) {
+      const answer = card.querySelector('.answer');
+      answer.classList.toggle('hidden');
+    }
+
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.card-item');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
