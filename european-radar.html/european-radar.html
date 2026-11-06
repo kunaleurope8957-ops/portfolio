@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nordic Relocation Command Center | Kunal.NordicDev</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans min-h-screen flex flex-col justify-between m-0 p-0">
+
+  <!-- Header Section -->
+  <header class="border-b border-gray-800 px-4 py-3 bg-gray-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <span class="text-xl">🇩🇰</span>
+        <h1 class="text-xs sm:text-sm font-black tracking-wider text-emerald-400">NORDIC COMMAND CENTER</h1>
+      </div>
+      <span class="text-[10px] sm:text-xs bg-emerald-950 text-emerald-400 border border-emerald-800 px-2.5 py-0.5 rounded-full font-bold">
+        Jan 15 Milestone 🎯
+      </span>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Container -->
+  <main class="max-w-5xl mx-auto w-full px-4 py-6 flex-grow space-y-6">
+
+    <!-- Hero Banner -->
+    <div class="bg-gradient-to-r from-emerald-950 via-gray-900 to-gray-950 border border-emerald-800/40 rounded-xl p-5">
+      <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
+        Relocation Master Engine
+      </span>
+      <h2 class="text-xl sm:text-3xl font-extrabold text-white mt-2">European Target Relocation (2027-2028)</h2>
+      <p class="text-xs text-gray-400 mt-1">
+        Self-taught Junior Frontend Developer tracking 5-Nation metrics for Denmark, Finland, Norway, Sweden & Netherlands.
+      </p>
+    </div>
+
+    <!-- Live Calculator Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+      <!-- Salary & Savings Simulator -->
+      <div class="lg:col-span-2 bg-gray-900 border border-gray-800 rounded-xl p-5 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span>🧮</span> Interactive Savings Simulator
+            </h3>
+            <span class="text-[10px] text-emerald-400 font-mono">Live Calc</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <div>
+              <label class="text-[11px] font-semibold text-gray-400 block mb-1">Target Country & Currency</label>
+              <select id="countrySelect" class="w-full bg-gray-950 border border-gray-800 text-white text-xs rounded-lg p-2 focus:border-emerald-500 outline-none">
+                <option value="DKK">Denmark (DKK - Krone)</option>
+                <option value="EUR">Finland / Netherlands (€ - Euro)</option>
+                <option value="NOK">Norway (NOK - Krone)</option>
+                <option value="SEK">Sweden (SEK - Krona)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[11px] font-semibold text-gray-400 block mb-1">Gross Monthly Target Pay</label>
+              <input type="number" id="salaryInput" value="45000" class="w-full bg-gray-950 border border-gray-800 text-white text-xs rounded-lg p-2 focus:border-emerald-500 outline-none">
+            </div>
+          </div>
+
+          <!-- Breakdown Display -->
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-gray-950 border border-gray-800 p-2.5 rounded-lg text-center sm:text-left">
+              <span class="text-[9px] text-gray-400 block">Est. Tax</span>
+              <span id="taxDisplay" class="text-xs sm:text-sm font-bold text-red-400">~ 38%</span>
+            </div>
+            <div class="bg-gray-950 border border-gray-800 p-2.5 rounded-lg text-center sm:text-left">
+              <span class="text-[9px] text-gray-400 block">Living Cost</span>
+              <span id="costDisplay" class="text-xs sm:text-sm font-bold text-yellow-400">14,000 DKK</span>
+            </div>
+            <div class="bg-gray-950 border border-emerald-800/60 p-2.5 rounded-lg text-center sm:text-left">
+              <span class="text-[9px] text-emerald-400 block font-semibold">Net Savings</span>
+              <span id="savingsDisplay" class="text-xs sm:text-sm font-black text-emerald-400">13,900 DKK</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-400 flex justify-between items-center">
+          <span>Estimated Monthly INR Savings:</span>
+          <span id="inrSavings" class="text-sm font-bold text-emerald-400">₹1,68,000 / month</span>
+        </div>
+      </div>
+
+      <!-- Roadmap Focus Card -->
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 flex flex-col justify-between">
+        <div>
+          <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+            <span>🚀</span> Mission Targets
+          </h3>
+          <ul class="space-y-2 text-xs">
+            <li class="flex items-start gap-2 bg-gray-950 p-2.5 rounded-lg border border-emerald-900/40">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <div>
+                <strong class="text-white block text-[11px]">Phase 1: Code & Streak</strong>
+                <span class="text-gray-400 text-[10px]">Daily Spck Editor & GitHub push till Jan 15.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-gray-950 p-2.5 rounded-lg border border-gray-800">
+              <span class="text-blue-400 font-bold">➔</span>
+              <div>
+                <strong class="text-white block text-[11px]">Phase 2: Passport Post-Jan 15</strong>
+                <span class="text-gray-400 text-[10px]">Indian passport process & recruiter outreach.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-gray-950 p-2.5 rounded-lg border border-gray-800">
+              <span class="text-yellow-400 font-bold">★</span>
+              <div>
+                <strong class="text-white block text-[11px]">Phase 3: Fast-Track Offer</strong>
+                <span class="text-gray-400 text-[10px]">Junior Frontend offer letter & Copenhagen visa.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-3 pt-2 border-t border-gray-800 text-[10px] text-center text-gray-500">
+          Age: 17 • Goal: Nordic Relocation
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5-Nation Radar Grid -->
+    <div>
+      <h3 class="text-base sm:text-lg font-extrabold text-white mb-3 flex items-center gap-2">
+        <span>🇪🇺</span> 5-Nation Target Radar
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        
+        <!-- Denmark -->
+        <div class="bg-gray-900 border border-emerald-500/40 rounded-xl p-3.5">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xl">🇩🇰</span>
+            <span class="text-[9px] bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded font-bold">Priority #1</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">Denmark (Copenhagen)</h4>
+          <p class="text-[11px] text-gray-400 mt-1">37 Hr Work Week • 38k-45k DKK Target Salary.</p>
+        </div>
+
+        <!-- Finland -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-3.5">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xl">🇫🇮</span>
+            <span class="text-[9px] bg-blue-950 text-blue-400 px-2 py-0.5 rounded font-bold">Tech Hub</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">Finland (Helsinki)</h4>
+          <p class="text-[11px] text-gray-400 mt-1">€3,800 - €4,500 Target Pay • Top Education System.</p>
+        </div>
+
+        <!-- Norway -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-3.5">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xl">🇳🇴</span>
+            <span class="text-[9px] bg-red-950 text-red-400 px-2 py-0.5 rounded font-bold">High Quality</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">Norway (Oslo)</h4>
+          <p class="text-[11px] text-gray-400 mt-1">42k - 50k NOK Target Pay • Scenic & Safe Living.</p>
+        </div>
+
+        <!-- Sweden -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-3.5">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xl">🇸🇪</span>
+            <span class="text-[9px] bg-yellow-950 text-yellow-400 px-2 py-0.5 rounded font-bold">Startups</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">Sweden (Stockholm)</h4>
+          <p class="text-[11px] text-gray-400 mt-1">40k - 48k SEK Target Pay • Unicorn Tech Market.</p>
+        </div>
+
+        <!-- Netherlands -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-3.5 sm:col-span-2 md:col-span-1">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xl">🇳🇱</span>
+            <span class="text-[9px] bg-orange-950 text-orange-400 px-2 py-0.5 rounded font-bold">30% Tax Perk</span>
+          </div>
+          <h4 class="text-sm font-bold text-white">Netherlands (Amsterdam)</h4>
+          <p class="text-[11px] text-gray-400 mt-1">€4,000 - €5,000 Target Pay • English-Friendly.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Navigation Action -->
+    <div class="text-center pt-2">
+      <a href="index.html" class="inline-block text-xs bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold px-5 py-2 rounded-lg transition shadow-md shadow-emerald-500/20">
+        ← Back to Portfolio Hub
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 text-[10px] text-gray-600 border-t border-gray-900 w-full">
+    © 2026 Kunal.NordicDev • Copenhagen Relocation Masterplan
+  </footer>
+
+  <!-- Script for Currency & Savings Calculator -->
+  <script>
+    const countrySelect = document.getElementById('countrySelect');
+    const salaryInput = document.getElementById('salaryInput');
+    const taxDisplay = document.getElementById('taxDisplay');
+    const costDisplay = document.getElementById('costDisplay');
+    const savingsDisplay = document.getElementById('savingsDisplay');
+    const inrSavings = document.getElementById('inrSavings');
+
+    function updateCalculator() {
+      const currency = countrySelect.value;
+      const gross = parseFloat(salaryInput.value) || 0;
+      let netSavings = 0;
+      let formattedINR = "";
+
+      if (currency === 'DKK') {
+        const afterTax = gross * 0.62;
+        netSavings = afterTax - 14000;
+        taxDisplay.textContent = '~ 38%';
+        costDisplay.textContent = '14,000 DKK';
+        savingsDisplay.textContent = `${Math.max(0, Math.round(netSavings)).toLocaleString()} DKK`;
+        formattedINR = `₹${Math.max(0, Math.round(netSavings * 12.1)).toLocaleString()} / month`;
+      } else if (currency === 'EUR') {
+        const afterTax = gross * 0.65;
+        netSavings = afterTax - 1600;
+        taxDisplay.textContent = '~ 35%';
+        costDisplay.textContent = '€1,600';
+        savingsDisplay.textContent = `€${Math.max(0, Math.round(netSavings)).toLocaleString()}`;
+        formattedINR = `₹${Math.max(0, Math.round(netSavings * 90)).toLocaleString()} / month`;
+      } else if (currency === 'NOK') {
+        const afterTax = gross * 0.64;
+        netSavings = afterTax - 15000;
+        taxDisplay.textContent = '~ 36%';
+        costDisplay.textContent = '15,000 NOK';
+        savingsDisplay.textContent = `${Math.max(0, Math.round(netSavings)).toLocaleString()} NOK`;
+        formattedINR = `₹${Math.max(0, Math.round(netSavings * 7.8)).toLocaleString()} / month`;
+      } else if (currency === 'SEK') {
+        const afterTax = gross * 0.67;
+        netSavings = afterTax - 14000;
+        taxDisplay.textContent = '~ 33%';
+        costDisplay.textContent = '14,000 SEK';
+        savingsDisplay.textContent = `${Math.max(0, Math.round(netSavings)).toLocaleString()} SEK`;
+        formattedINR = `₹${Math.max(0, Math.round(netSavings * 8.1)).toLocaleString()} / month`;
+      }
+
+      inrSavings.textContent = formattedINR;
+    }
+
+    countrySelect.addEventListener('change', updateCalculator);
+    salaryInput.addEventListener('input', updateCalculator);
+    updateCalculator();
+  </script>
+
+</body>
+</html>
