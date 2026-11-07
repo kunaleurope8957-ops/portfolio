@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | 5-Nation Market Benchmark</title>
+    <style>
+        :root {
+            --bg-deep: #060913;
+            --bg-panel: #0D1527;
+            --bg-card: #141C36;
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+            --denmark-red: #EF4444;
+            --text-glow: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --border-line: #1E293B;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-glow); padding: 25px; display: flex; justify-content: center; }
+        
+        .container { width: 100%; max-width: 850px; display: flex; flex-direction: column; gap: 20px; }
+        
+        .banner {
+            background: linear-gradient(145deg, #0D1527 0%, #1E293B 100%);
+            border: 1px solid var(--border-line); border-radius: 12px; padding: 30px; text-align: center;
+        }
+        .banner h1 { font-size: 24px; font-weight: 900; margin-bottom: 5px; }
+        
+        .matrix-card {
+            background: var(--bg-panel); border: 1px solid var(--border-line);
+            border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 12px;
+            transition: 0.3s;
+        }
+        .matrix-card:hover { border-color: var(--accent-blue); }
+
+        .progress-track { width: 100%; background: #1E293B; height: 10px; border-radius: 5px; overflow: hidden; margin: 5px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-green)); border-radius: 5px; }
+        
+        .badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+        .badge-dk { background: rgba(239, 68, 68, 0.2); color: var(--denmark-red); }
+        .badge-euro { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+
+        .btn-back { color: var(--accent-blue); text-decoration: none; font-size: 14px; font-weight: bold; margin-top: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Dashboard Header -->
+        <div class="banner">
+            <h1>📊 Real-Time Euro Relocation Analytics</h1>
+            <p style="color: var(--text-secondary); font-size: 14px;">Kunal Kashyap | Skill Optimization & Market Benchmarking Hub</p>
+        </div>
+
+        <!-- Metric 1: Denmark Target -->
+        <div class="matrix-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; font-size: 15px;">🇩🇰 Denmark Fast-Track & Collective Agreement Readiness</span>
+                <span class="badge badge-dk">Feb 2027 Priority</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+            <p style="color: var(--text-secondary); font-size: 13px;">Optimized for Denmark's latest immigration fast-track pathways for global technical talent.</p>
+        </div>
+
+        <!-- Metric 2: Core Engineering Stream -->
+        <div class="matrix-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; font-size: 15px;">⚡ High-Intensity Development Scale (15+ Hours Daily)</span>
+                <span class="badge badge-euro" style="color: var(--accent-green); background: rgba(16, 185, 129, 0.2);">World Record Tier</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 98%; background: var(--accent-green);"></div></div>
+            <p style="color: var(--text-secondary); font-size: 13px;">Continuous daily commit tracking, advanced UI optimization, and architecture modularity.</p>
+        </div>
+
+        <!-- Metric 3: Other 4 Nations Hubs -->
+        <div class="matrix-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; font-size: 15px;">🌍 Eurozone Compatibility Matrix (SE, NL, FI, NO)</span>
+                <span class="badge badge-euro">4-Nation Ecosystem</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 90%; background: var(--accent-blue);"></div></div>
+            <p style="color: var(--text-secondary); font-size: 13px;">Scale-up compliance for Stockholm, Amsterdam, Helsinki, and Oslo technical guidelines.</p>
+        </div>
+
+        <a href="../index.html" class="btn-back">← Back to Master Hub Portal</a>
+    </div>
+
+</body>
+</html>
