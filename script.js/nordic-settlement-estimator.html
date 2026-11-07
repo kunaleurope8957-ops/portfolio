@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | Nordic & EU Settlement Estimator</title>
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #151D30;
+            --accent-blue: #3B82F6;
+            --accent-green: #10B981;
+            --accent-red: #EF4444;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: #1E293B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .badge-blue { background-color: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+        .badge-red { background-color: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+
+        h1 { font-size: 22px; margin-bottom: 8px; }
+        .subtitle { color: var(--text-muted); font-size: 13px; }
+
+        .input-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+        
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .currency-prefix {
+            position: absolute;
+            left: 12px;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px 12px 12px 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--accent-blue); }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 600px) {
+            .matrix-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .country-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .country-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .country-name { font-weight: 700; font-size: 15px; }
+        .hub-tag { font-size: 11px; color: var(--text-muted); background: #0b0f19; padding: 2px 6px; border-radius: 4px; }
+
+        .value-display { font-size: 20px; font-weight: 700; color: var(--accent-green); }
+        .currency-label { font-size: 11px; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <!-- Header Section -->
+        <div class="header-card">
+            <div class="badge-row">
+                <span class="badge badge-blue">17-Year-Old Creator Track</span>
+                <span class="badge badge-red">2027 Independence Plan</span>
+            </div>
+            <h1>Live Relocation Runway Matrix</h1>
+            <p class="subtitle">Dynamic conversion from INR base to exact target Nordic & EU operational cost allocations.</p>
+        </div>
+
+        <!-- Input Controller Section -->
+        <div class="input-card">
+            <div class="input-group">
+                <label for="baseInr">Base Monthly Target Income (INR)</label>
+                <div class="input-wrapper">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="baseInr" value="150000" oninput="calculateMatrix()">
+                </div>
+            </div>
+        </div>
+
+        <!-- Matrix Destination Cards Grid -->
+        <div class="matrix-grid">
+            
+            <!-- Denmark -->
+            <div class="country-card">
+                <div class="country-header">
+                    <span class="country-name">🇩🇰 Denmark</span>
+                    <span class="hub-tag" style="border-left: 3px solid var(--accent-red)">Priority #1 Hub</span>
+                </div>
+                <div class="value-display" id="dkk-output">~0.00 DKK /mo</div>
+                <div class="currency-label">Copenhagen Tech Base (DKK)</div>
+            </div>
+
+            <!-- Norway -->
+            <div class="country-card">
+                <div class="country-header">
+                    <span class="country-name">🇳🇴 Norway</span>
+                    <span class="hub-tag">Oslo Hub</span>
+                </div>
+                <div class="value-display" id="nok-output">~0.00 NOK /mo</div>
+                <div class="currency-label">Norwegian Krone (NOK)</div>
+            </div>
+
+            <!-- Sweden -->
+            <div class="country-card">
+                <div class="country-header">
+                    <span class="country-name">🇸🇪 Sweden</span>
+                    <span class="hub-tag">Stockholm Hub</span>
+                </div>
+                <div class="value-display" id="sek-output">~0.00 SEK /mo</div>
+                <div class="currency-label">Swedish Krona (SEK)</div>
+            </div>
+
+            <!-- Finland -->
+            <div class="country-card">
+                <div class="country-header">
+                    <span class="country-name">🇫🇮 Finland</span>
+                    <span class="hub-tag">Helsinki Hub</span>
+                </div>
+                <div class="value-display" id="eur-fi-output">~0.00 EUR /mo</div>
+                <div class="currency-label">Eurozone Core (EUR)</div>
+            </div>
+
+            <!-- Netherlands -->
+            <div class="country-card">
+                <div class="country-header">
+                    <span class="country-name">🇳🇱 Netherlands</span>
+                    <span class="hub-tag" style="color: #A78BFA;">Amsterdam Hub</span>
+                </div>
+                <div class="value-display" id="eur-nl-output">~0.00 EUR /mo</div>
+                <div class="currency-label">Eurozone Core (EUR)</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Solid live calculation weights based on real market distributions
+        function calculateMatrix() {
+            const inrInput = parseFloat(document.getElementById('baseInr').value) || 0;
+
+            // Operational conversion rules 
+            const dkkVal = inrInput * 0.082;
+            const nokVal = inrInput * 0.128;
+            const sekVal = inrInput * 0.131;
+            const eurVal = inrInput * 0.011;
+
+            // Injecting formatted real-time values into the layout architecture
+            document.getElementById('dkk-output').innerText = `~${dkkVal.toLocaleString('en-US', {minimumFractionDigits: 1, maximumFractionDigits: 1})} DKK /mo`;
+            document.getElementById('nok-output').innerText = `~${nokVal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} NOK /mo`;
+            document.getElementById('sek-output').innerText = `~${sekVal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} SEK /mo`;
+            document.getElementById('eur-fi-output').innerText = `~${eurVal.toLocaleString('en-US', {minimumFractionDigits: 1, maximumFractionDigits: 1})} EUR /mo`;
+            document.getElementById('eur-nl-output').innerText = `~${eurVal.toLocaleString('en-US', {minimumFractionDigits: 1, maximumFractionDigits: 1})} EUR /mo`;
+        }
+
+        // Initialize display execution on first render
+        calculateMatrix();
+    </script>
+</body>
+</html>
