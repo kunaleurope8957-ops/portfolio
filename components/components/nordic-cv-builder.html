@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | Sovereign Profile Engine</title>
+    <style>
+        :root {
+            --bg-dark: #070B16;
+            --bg-card: #0F1626;
+            --accent-blue: #3B82F6;
+            --accent-green: #10B981;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: #1E293B;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); padding: 20px; display: flex; justify-content: center; }
+        .cv-container { width: 100%; max-width: 850px; display: flex; flex-direction: column; gap: 15px; }
+        .control-bar { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .btn-print { background: var(--accent-blue); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .btn-print:hover { background: #2563EB; }
+        .sheet { background: #FFFFFF; color: #111827; padding: 40px; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; }
+        .header-section { display: flex; justify-content: space-between; border-bottom: 2px solid #E5E7EB; padding-bottom: 15px; }
+        .section-title { font-size: 15px; font-weight: 700; color: #1F2937; text-transform: uppercase; border-left: 4px solid #3B82F6; padding-left: 8px; margin-bottom: 8px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 600px) { .grid-2 { grid-template-columns: 2fr 1fr; } }
+        .tag { background: #F3F4F6; color: #1F2937; font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 4px; display: inline-block; margin: 2px; }
+        .highlight { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 12px; margin-top: 10px; }
+        @media print { .control-bar { display: none; } body { background: white; padding: 0; } .sheet { box-shadow: none; padding: 0; } }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="control-bar">
+            <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">WORKSPACE: SOVEREIGN CANVASES</span>
+            <button class="btn-print" onclick="window.print()">Export Professional PDF 📄</button>
+        </div>
+        <div class="sheet">
+            <div class="header-section">
+                <div>
+                    <h1 style="font-size: 28px; color: #111827;">Kunal Kashyap</h1>
+                    <div style="font-size: 13px; color: #4B5563; font-weight: bold; text-transform: uppercase;">Frontend Systems & Relocation Interface Engineer</div>
+                </div>
+                <div style="text-align: right; font-size: 12px; color: #4B5563; line-height: 1.6;">
+                    <div>🌐 ://github.com</div>
+                    <div>📍 India → Denmark Priority 2027 Hub</div>
+                    <div>⚡ Age: 17 Years Old (18 by Feb 2027)</div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">Sovereign Focus Execution Plan</div>
+                <p style="font-size: 13.5px; color: #374151; line-height: 1.5;">High-intensity developer running on a continuous 15+ hours daily stream logic execution cadence. Specialized in low-latency dynamic web visualizers and multi-currency frameworks modules. **Locked for absolute fast-track placement in Copenhagen by February 2027.**</p>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <div class="section-title">Developed Core Infrastructure Engines</div>
+                    <p style="font-size: 13.5px; font-weight: bold; color: #111827;">1. 5-Nation Corporate Sponsor Radar</p>
+                    <p style="font-size: 12.5px; color: #4B5563; margin-bottom: 8px;">Analytical tracking interface mapping fast-track certified companies in Denmark, Sweden, and Netherlands.</p>
+                    <p style="font-size: 13.5px; font-weight: bold; color: #111827;">2. Live Relocation Runway Calculator</p>
+                    <p style="font-size: 12.5px; color: #4B5563;">Calculations core automating multi-currency matrix outputs mapped to variable European living standards parameters.</p>
+                </div>
+                <div>
+                    <div class="section-title">Tech Competence</div>
+                    <div>
+                        <span class="tag">Frontend Mastery</span>
+                        <span class="tag">JavaScript (ES6+)</span>
+                        <span class="tag">Dynamic UI Architecture</span>
+                        <span class="tag">State Core Logic</span>
+                    </div>
+                    <div class="highlight">
+                        <div style="font-size: 11px; font-weight: bold; color: #1E40AF; text-transform: uppercase;">Verification</div>
+                        <div style="font-size: 16px; font-weight: 800; color: #1D4ED8; margin: 2px 0;">100% Active Streak</div>
+                        <div style="font-size: 11px; color: #1E40AF;">Continuous daily production logs.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
