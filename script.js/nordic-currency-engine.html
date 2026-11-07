@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kunal Kashyap | 5-Country Nordic & EU Currency Engine (2027)</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen p-4 sm:p-8">
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-blue-950 via-gray-900 to-indigo-950 border border-blue-800 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-3 py-1 bg-yellow-400 text-gray-950 text-xs font-black rounded-lg uppercase tracking-wider">⚡ 17-Year-Old World Record Master</span>
+        <span class="px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-lg uppercase">🇩🇰 Denmark Priority</span>
+      </div>
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">💱 5-Country Nordic & EU Currency Engine</h1>
+        <p class="text-xs sm:text-sm text-gray-300 mt-2">
+          Live budget conversion from INR to DKK (Denmark), NOK (Norway), SEK (Sweden), and EUR (Finland & Netherlands). Built by Kunal Kashyap for 2027 relocation.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href="index.html" class="px-4 py-2 bg-gray-900 text-xs font-bold text-yellow-400 rounded-xl hover:bg-gray-800 transition border border-gray-700">← Back to Hub</a>
+        <a href="nordic-freedom-engine.html" class="px-4 py-2 bg-blue-900 text-xs font-bold text-white rounded-xl hover:bg-blue-800 transition">Freedom Engine ⚡</a>
+      </div>
+    </div>
+
+    <!-- 5-Country Grid -->
+    <div class="bg-gray-900 border border-gray-800 p-6 rounded-3xl shadow-xl space-y-4">
+      <h3 class="text-sm font-black text-yellow-400 uppercase tracking-wider">🇪🇺 Live Relocation Budget Matrix (Base: ₹1,50,000 /mo)</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- Denmark -->
+        <div class="bg-gray-950 p-4 rounded-2xl border border-red-900/50 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-white text-sm">🇩🇰 Denmark</span>
+            <span class="text-[10px] bg-red-900 text-red-200 px-2 py-0.5 rounded font-bold">Priority #1</span>
+          </div>
+          <p id="dkk-budget-display" class="text-lg font-black text-yellow-400 mt-2">Fetching...</p>
+          <p class="text-[11px] text-gray-400">Copenhagen Tech Hub (DKK)</p>
+        </div>
+
+        <!-- Norway -->
+        <div class="bg-gray-950 p-4 rounded-2xl border border-gray-800 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-white text-sm">🇳🇴 Norway</span>
+            <span class="text-[10px] bg-yellow-900 text-yellow-200 px-2 py-0.5 rounded font-bold">Oslo Hub</span>
+          </div>
+          <p id="nok-budget-display" class="text-lg font-black text-yellow-400 mt-2">Fetching...</p>
+          <p class="text-[11px] text-gray-400">Norwegian Krone (NOK)</p>
+        </div>
+
+        <!-- Sweden -->
+        <div class="bg-gray-950 p-4 rounded-2xl border border-gray-800 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-white text-sm">🇸🇪 Sweden</span>
+            <span class="text-[10px] bg-green-900 text-green-200 px-2 py-0.5 rounded font-bold">Stockholm Hub</span>
+          </div>
+          <p id="sek-budget-display" class="text-lg font-black text-yellow-400 mt-2">Fetching...</p>
+          <p class="text-[11px] text-gray-400">Swedish Krona (SEK)</p>
+        </div>
+
+        <!-- Finland -->
+        <div class="bg-gray-950 p-4 rounded-2xl border border-gray-800 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-white text-sm">🇫🇮 Finland</span>
+            <span class="text-[10px] bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded font-bold">Helsinki Hub</span>
+          </div>
+          <p id="eur-fin-budget-display" class="text-lg font-black text-yellow-400 mt-2">Fetching...</p>
+          <p class="text-[11px] text-gray-400">Euro Zone (EUR)</p>
+        </div>
+
+        <!-- Netherlands -->
+        <div class="bg-gray-950 p-4 rounded-2xl border border-gray-800 space-y-2 sm:col-span-2 lg:col-span-1">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-white text-sm">🇳🇱 Netherlands</span>
+            <span class="text-[10px] bg-purple-900 text-purple-200 px-2 py-0.5 rounded font-bold">Amsterdam</span>
+          </div>
+          <p id="eur-nl-budget-display" class="text-lg font-black text-yellow-400 mt-2">Fetching...</p>
+          <p class="text-[11px] text-gray-400">Euro Zone 30% Ruling (EUR)</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Live JavaScript Currency Engine -->
+  <script>
+    async function updateRelocationBudgets() {
+        const apiURL = 'https://open.er-api.com/v6/latest/INR';
+
+        try {
+            const response = await fetch(apiURL);
+            if (!response.ok) throw new Error('API fetch failed');
+            
+            const data = await response.json();
+            
+            const inrToDkk = data.rates.DKK;
+            const inrToNok = data.rates.NOK;
+            const inrToSek = data.rates.SEK;
+            const inrToEur = data.rates.EUR;
+
+            const monthlyBudgetINR = 150000; 
+
+            const conversionDkk = (monthlyBudgetINR * inrToDkk).toLocaleString();
+            const conversionNok = (monthlyBudgetINR * inrToNok).toLocaleString();
+            const conversionSek = (monthlyBudgetINR * inrToSek).toLocaleString();
+            const conversionEur = (monthlyBudgetINR * inrToEur).toLocaleString();
+
+            if(document.getElementById('dkk-budget-display')) {
+                document.getElementById('dkk-budget-display').innerText = `~${conversionDkk} DKK /mo`;
+            }
+            if(document.getElementById('nok-budget-display')) {
+                document.getElementById('nok-budget-display').innerText = `~${conversionNok} NOK /mo`;
+            }
+            if(document.getElementById('sek-budget-display')) {
+                document.getElementById('sek-budget-display').innerText = `~${conversionSek} SEK /mo`;
+            }
+            if(document.getElementById('eur-fin-budget-display')) {
+                document.getElementById('eur-fin-budget-display').innerText = `~${conversionEur} EUR /mo`;
+            }
+            if(document.getElementById('eur-nl-budget-display')) {
+                document.getElementById('eur-nl-budget-display').innerText = `~${conversionEur} EUR /mo`;
+            }
+
+            console.log("All 5 Nordic & EU live exchange rates updated successfully!");
+
+        } catch (error) {
+            console.error("Error fetching live rates:", error);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', updateRelocationBudgets);
+  </script>
+
+</body>
+</html>
