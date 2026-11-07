@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | 2027 Denmark Sponsor Radar</title>
+    <style>
+        :root {
+            --bg-dark: #090D1A;
+            --bg-card: #131A2E;
+            --accent-glow: #10B981;
+            --denmark-red: #EF4444;
+            --text-white: #F3F4F6;
+            --text-gray: #9CA3AF;
+            --border-glow: #1E293B;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background: var(--bg-dark); color: var(--text-white); padding: 30px; display: flex; justify-content: center; }
+        .wrapper { width: 100%; max-width: 850px; display: flex; flex-direction: column; gap: 20px; }
+        .title-block { background: var(--bg-card); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glow); text-align: center; }
+        .title-block h1 { color: var(--text-white); font-size: 24px; margin-bottom: 5px; }
+        .target-badge { background: rgba(239, 68, 68, 0.15); color: var(--denmark-red); font-size: 12px; font-weight: bold; padding: 5px 12px; border-radius: 20px; display: inline-block; margin-top: 10px; }
+        .radar-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        @media(min-width: 600px) { .radar-grid { grid-template-columns: repeat(2, 1fr); } }
+        .company-row { background: var(--bg-card); padding: 20px; border-radius: 10px; border: 1px solid var(--border-glow); display: flex; flex-direction: column; gap: 10px; transition: 0.3s; }
+        .company-row:hover { border-color: var(--accent-glow); transform: translateY(-2px); }
+        .comp-header { display: flex; justify-content: space-between; align-items: center; }
+        .name { font-weight: bold; font-size: 16px; }
+        .status-pill { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+        .active { background: rgba(16, 185, 129, 0.2); color: var(--accent-glow); }
+        .tech-stack { font-size: 12px; color: var(--text-gray); }
+        .action-link { display: inline-block; margin-top: 5px; color: #3B82F6; font-size: 13px; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title-block">
+            <h1>🇩🇰 Feb 2027 Denmark Offer Pipeline</h1>
+            <p style="color: var(--text-gray); font-size: 14px;">17-Year-Old Developer - World Record Execution Tracker</p>
+            <span class="target-badge">TARGET: FEB 2027 OFFER LETTER</span>
+        </div>
+
+        <div class="radar-grid" id="radarGrid"></div>
+    </div>
+
+    <script>
+        // High-Probability Danish Tech Targets for Indians (2027 Scheme)
+        const targets = [
+            { name: "Netcompany", hub: "Copenhagen", stack: "Frontend / JavaScript Expert", visa: "Top Certified" },
+            { name: "Unity Technologies", hub: "Copenhagen", stack: "Full-Stack Web Architect", visa: "Fast-Track" },
+            { name: "LEGO Group", hub: "Billund / Aarhus", stack: "UI Component Specialist", visa: "Highly Active" },
+            { name: "Maersk Digital", hub: "Copenhagen", stack: "SaaS & Dashboard Analytics", visa: "Global Sponsor" }
+        ];
+
+        const container = document.getElementById('radarGrid');
+        targets.forEach(c => {
+            container.innerHTML += `
+                <div class="company-row">
+                    <div class="comp-header">
+                        <span class="name">🏢 ${c.name}</span>
+                        <span class="status-pill active">${c.visa}</span>
+                    </div>
+                    <div style="font-size: 13px; color: var(--text-gray);">📍 Hub: ${c.hub}</div>
+                    <div class="tech-stack">⚙️ Requirement: <b>${c.stack}</b></div>
+                    <a href="#" class="action-link">Launch Custom Pitch Workflow →</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
