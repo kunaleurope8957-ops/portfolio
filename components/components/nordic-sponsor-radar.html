@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | Corporate Fast-Track Radar</title>
+    <style>
+        :root {
+            --bg-deep: #060913;
+            --bg-card: #0D1527;
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+            --denmark-red: #EF4444;
+            --text-main: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --border-line: #1E293B;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-main); padding: 25px; display: flex; justify-content: center; }
+        .wrapper { width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 20px; }
+        .panel-header { 
+            background: linear-gradient(145deg, #0D1527 0%, #1E293B 100%); 
+            border: 1px solid var(--border-line); border-radius: 12px; padding: 30px; text-align: center; 
+        }
+        .target-badge { background: rgba(239, 68, 68, 0.15); color: var(--denmark-red); font-size: 12px; font-weight: bold; padding: 5px 12px; border-radius: 20px; display: inline-block; margin-top: 10px; border: 1px solid var(--denmark-red); }
+        .grid-layout { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 10px; }
+        @media(min-width: 650px) { .grid-layout { grid-template-columns: repeat(2, 1fr); } }
+        .placement-card { background: var(--bg-card); padding: 20px; border-radius: 10px; border: 1px solid var(--border-line); display: flex; flex-direction: column; gap: 10px; transition: 0.3s; }
+        .placement-card:hover { border-color: var(--accent-green); transform: translateY(-3px); }
+        .badge-pill { font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; background: rgba(16, 185, 129, 0.2); color: var(--accent-green); width: max-content; }
+        .nav-link { color: var(--accent-blue); text-decoration: none; font-size: 14px; font-weight: bold; margin-top: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="panel-header">
+            <h1 style="font-size: 24px; font-weight: 900;">📡 5-Nation Corporate Sponsor Radar</h1>
+            <p style="color: var(--text-secondary); font-size: 14px;">17-Year-Old Sovereign Talent Pipeline Management Console</p>
+            <span class="target-badge">TARGET: FEB 2027 FAST-TRACK OFFER</span>
+        </div>
+        <div class="grid-layout" id="pipelineContainer"></div>
+        <a href="../index.html" class="nav-link">← Return to Master Hub Dashboard</a>
+    </div>
+    <script>
+        const corporateList = [
+            { company: "Netcompany (Copenhagen)", standard: "Frontend Core UI Systems", clearance: "Top Certified 🇩🇰" },
+            { company: "Unity Technologies (Copenhagen)", standard: "Full-Stack Application UI", clearance: "Fast-Track 🇩🇰" },
+            { company: "Booking.com (Amsterdam)", standard: "State Management Frameworks", clearance: "Mass Sponsor 🇳🇱" },
+            { company: "Rovio / Sega (Helsinki)", standard: "Dynamic Dashboard Layouts", clearance: "2-Week Process 🇫🇮" }
+        ];
+        const rootBox = document.getElementById('pipelineContainer');
+        corporateList.forEach(item => {
+            rootBox.innerHTML += `
+                <div class="placement-card">
+                    <div style="font-weight: 800; font-size: 17px; color: #FFF;">🏢 ${item.company}</div>
+                    <div style="font-size: 13px; color: var(--text-secondary);">Domain Requirements: <b>${item.standard}</b></div>
+                    <span class="badge-pill">${item.clearance}</span>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
