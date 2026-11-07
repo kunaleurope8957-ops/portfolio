@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | Sovereign Tech Empire Hub</title>
+    <style>
+        :root {
+            --bg-deep: #060913;
+            --bg-panel: #0D1527;
+            --bg-card: #141C36;
+            --accent-neon: #10B981;
+            --accent-blue: #3B82F6;
+            --denmark-red: #EF4444;
+            --text-glow: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --border-line: #1E293B;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-glow); padding: 25px; display: flex; justify-content: center; }
+        .empire-container { width: 100%; max-width: 950px; display: flex; flex-direction: column; gap: 24px; }
+        
+        .empire-banner {
+            background: linear-gradient(145deg, #0D1527 0%, #1E293B 100%);
+            border: 1px solid var(--border-line); border-radius: 16px; padding: 35px; text-align: center;
+        }
+        .empire-banner h1 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+        .badge-row { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
+        .badge-core { font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .badge-red { background: rgba(239, 68, 68, 0.15); color: var(--denmark-red); border-color: var(--denmark-red); }
+        .badge-green { background: rgba(16, 185, 129, 0.15); color: var(--accent-neon); border-color: var(--accent-neon); }
+
+        .modules-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 15px; }
+        @media (min-width: 768px) { .modules-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .module-card {
+            background-color: var(--bg-panel); border: 1px solid var(--border-line);
+            border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px;
+            text-decoration: none; color: inherit; transition: 0.3s;
+        }
+        .module-card:hover { border-color: var(--accent-blue); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .card-heading { font-size: 18px; font-weight: 800; color: #FFF; }
+        .desc-text { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .action-trigger { font-size: 12.5px; color: var(--accent-blue); font-weight: 700; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <div class="empire-container">
+        <div class="empire-banner">
+            <h1>🚀 Kunal Kashyap | Global Tech Empire Engine</h1>
+            <p style="color: var(--text-secondary); font-size: 14px;">17-Year-Old Software Pioneer - Clean 5-Nation Hub Architecture</p>
+            <div class="badge-row">
+                <span class="badge-core badge-red">🇩🇰 Target Hub: Copenhagen Feb 2027</span>
+                <span class="badge-core badge-green">🔥 Systems In Absolute Sync</span>
+            </div>
+        </div>
+
+        <div class="modules-grid">
+            <a href="components/nordic-sponsor-radar.html" class="module-card">
+                <div class="card-heading">📡 5-Nation Corporate Sponsor Radar</div>
+                <p class="desc-text">Visa tracking placement engine mapped to certified scale-ups in Denmark, Sweden, and Netherlands.</p>
+                <div class="action-trigger">Open Sponsor Target Grid →</div>
+            </a>
+
+            <a href="nordic-cv-builder.html" class="module-card">
+                <div class="card-heading">🗂️ Sovereign Profile Engine (CV Builder)</div>
+                <p class="desc-text">High-intensity printable application canvas tracking validation data points optimized for target recruiters.</p>
+                <div class="action-trigger">Launch Professional Profile Layout →</div>
+            </a>
+
+            <a href="data-analytics/market-benchmark.html" class="module-card">
+                <div class="card-heading">📊 Market Analytics & Feasibility Panel</div>
+                <p class="desc-text">Real-time dynamic framework checking structural capability matches against modern European migration systems.</p>
+                <div class="action-trigger">Boot Competence Core Console →</div>
+            </a>
+
+            <a href="core-infrastructure/deployment-telemetry.html" class="module-card" style="border-color: rgba(16, 185, 129, 0.4);">
+                <div class="card-heading" style="color: var(--accent-neon);">⚙️ Automated Deployment Telemetry Dashboard</div>
+                <p class="desc-text">Continuous dynamic terminal tracker simulator mapping structural framework health checks directly for target EU nodes.</p>
+                <div class="action-trigger" style="color: var(--accent-neon);">Initialize Production Telemetry Stream →</div>
+            </a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
