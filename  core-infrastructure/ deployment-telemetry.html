@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kashyap | Deployment Telemetry Engine</title>
+    <style>
+        :root {
+            --bg-deep: #050813;
+            --bg-card: #0E162B;
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+            --denmark-red: #EF4444;
+            --text-glow: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-line: #1E293B;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-glow); padding: 25px; display: flex; justify-content: center; }
+        .wrapper { width: 100%; max-width: 850px; display: flex; flex-direction: column; gap: 20px; }
+        
+        .header-panel { 
+            background: linear-gradient(135deg, #0E162B 0%, #1E293B 100%); 
+            border: 1px solid var(--border-line); border-radius: 12px; padding: 25px; text-align: center;
+        }
+
+        .terminal-box {
+            background-color: #02040A; border: 1px solid var(--border-line);
+            border-radius: 8px; padding: 20px; font-family: 'Courier New', Courier, monospace;
+            min-height: 220px; max-height: 320px; overflow-y: auto; font-size: 13px; line-height: 1.6;
+        }
+
+        .btn-action {
+            background-color: var(--accent-green); color: black; border: none;
+            padding: 10px 20px; font-weight: bold; border-radius: 6px; cursor: pointer;
+            transition: 0.2s; display: inline-block; text-transform: uppercase; font-size: 12px;
+        }
+        .btn-action:hover { background-color: #059669; opacity: 0.9; }
+        .back-link { color: var(--accent-blue); text-decoration: none; font-size: 14px; font-weight: bold; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Dashboard Head Header -->
+        <div class="header-panel">
+            <h1 style="font-size: 22px; font-weight: 900; margin-bottom: 5px;">⚙️ Automated Deployment Telemetry Panel</h1>
+            <p style="color: var(--text-muted); font-size: 13.5px;">Kunal Kashyap | Continuous Production Logging System Sandbox</p>
+        </div>
+
+        <div style="text-align: right;">
+            <button class="btn-action" onclick="runSimulationLogs()">Initialize System Trace Live ⚡</button>
+        </div>
+
+        <!-- Terminal Console Logger Viewport -->
+        <div class="terminal-box" id="consoleLogs">
+            <div style="color: #6B7280;">[SYSTEM SYSTEM]: Environment diagnostic standby status. Click button above to initialize server metrics telemetry...</div>
+        </div>
+
+        <a href="../index.html" class="back-link">← Return to Master Hub Portal</a>
+    </div>
+
+    <script>
+        function runSimulationLogs() {
+            const outputBox = document.getElementById('consoleLogs');
+            outputBox.innerHTML = `<div style="color: var(--accent-blue);">[INITIALIZING] Booting Kunal Kashyap Global Relocation Pipeline v1.0.0...</div>`;
+            
+            // Production deployment data arrays rules matching 2027 timelines
+            const logs = [
+                "[OK] Mapping 5-Nation framework endpoints rules (DK, SE, NL, FI, NO).",
+                "[OK] Authenticating 2027 Collective Agreement Business Visas eligibility checks.",
+                "[OK] Tracking continuous 15+ hours developer execution cycles status... 100% VERIFIED.",
+                "[LIVE CHECK] Denmark fast-track sponsor corporate endpoints connecting: 200 SUCCESS.",
+                "[SUCCESS] Target horizons parameters locked. Master pipeline synchronization complete."
+            ];
+
+            logs.forEach((log, index) => {
+                setTimeout(() => {
+                    outputBox.innerHTML += `<div style="color: ${log.includes('SUCCESS') ? 'var(--accent-green)' : 'var(--text-glow)'};">${log}</div>`;
+                    outputBox.scrollTop = outputBox.scrollHeight;
+                }, (index + 1) * 500); // Systematic data log printing distribution
+            });
+        }
+    </script>
+</body>
+</html>
