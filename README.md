@@ -1,10 +1,10 @@
 # 🚀 Kunal Kashyap | Global Tech Empire Engine
 
 An enterprise-grade, multi-node data streaming infrastructure designed for high-performance and absolute resilience across Nordic boundaries. 
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-Enterprise_Nordic-blue?style=for-the-badge)
+![Compliance](https://img.shields.io/badge/Compliance-GDPR_Ready-success?style=for-the-badge)
 
-[![Architect Validation](https://shields.io)](#[span_3](start_span)[span_3](end_span)
-[![Deployment Status](https://shields.io)](#[span_4](start_span)[span_4](end_span)
-[![Compliance](https://shields.io)](#[span_5](start_span)[span_5](end_span)
 
 
 ## 🌐 System Overview
