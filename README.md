@@ -1,28 +1,29 @@
-# Nordic Telemetry & Distributed Observability Engine
+# Nordic & Central European Telemetry Engine
 
 [![Build & Deploy](https://github.com)](https://github.com)
 [![TypeScript](https://shields.io)](https://typescriptlang.org)
 [![Node.js](https://shields.io)](https://nodejs.org)
 [![License: MIT](https://shields.io)](https://opensource.org)
 
-A high-throughput, fault-tolerant telemetry and cluster observability backend engineered in **Strict TypeScript**. Built to monitor multi-region European edge nodes (**Zurich**, **Stockholm**, **Amsterdam**) with continuous heartbeat verification and automated self-recovery.
+A high-throughput, fault-tolerant telemetry and cluster observability backend engineered in **Strict TypeScript**. Built to monitor multi-region European edge nodes across **Denmark, Norway, Sweden, Finland, Netherlands, Luxembourg, and Switzerland** with continuous heartbeat verification and automated self-recovery.
 
 🔗 **Live Telemetry Portal:** [https://github.io](https://github.io)
 
 ---
 
-## System Architecture
+## Multi-Region European Architecture
 
 ```text
-[ Edge Nodes: Zurich | Stockholm | Amsterdam ]
-                      │
-                      ▼
-       [ Express + Helmet API Gateway ]  ──► Strict Type Safety (tsconfig.json)
-                      │
-        ┌─────────────┴─────────────┐
-        ▼                           ▼
-[ DeepSpaceWatchdog ]       [ Redis Mesh Cache ]
-(Heartbeat & Self-Heal)     (Sub-millisecond Read)
+[ Nordic Region: Copenhagen (DK) | Oslo (NO) | Stockholm (SE) | Helsinki (FI) ]
+[ Central & West EU: Amsterdam (NL) | Luxembourg (LU) | Zurich (CH) ]
+                                     │
+                                     ▼
+                    [ Express + Helmet API Gateway ]  ──► Strict Type Safety (tsconfig.json)
+                                     │
+                       ┌─────────────┴─────────────┐
+                       ▼                           ▼
+             [ DeepSpaceWatchdog ]       [ Redis Mesh Cache ]
+             (Heartbeat & Self-Heal)     (Sub-millisecond Read)
 ```
 
 ---
@@ -41,7 +42,7 @@ A high-throughput, fault-tolerant telemetry and cluster observability backend en
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
 | `GET` | `/api/health` | Returns service health status, uptime in seconds, and ISO timestamp. |
-| `GET` | `/api/telemetry/nodes` | Streams real-time CPU load, memory usage, and latency metrics across EU nodes. |
+| `GET` | `/api/telemetry/nodes` | Streams real-time CPU load, memory usage, and latency metrics across all 7 European regions. |
 
 ### Quick Local Setup
 
@@ -61,9 +62,10 @@ npm run dev
 
 ---
 
-## Engineering Focus & Availability
+## Engineering Focus & Target Markets
 
 * **Core Stack:** TypeScript, Node.js, Express, Redis, Docker, GitHub Actions
 * **Languages:** English (Professional), German (B2), Hindi (Native)
-* **Target Roles:** Remote Backend / Full-Stack TypeScript Engineer (Europe & Global)
+* **Target Regions:** Denmark, Norway, Sweden, Finland, Netherlands, Luxembourg, Switzerland
+* **Target Roles:** Remote Backend / Full-Stack TypeScript Engineer & Relocation Opportunities
 * **Direct Contact:** `kunal.europe8957@gmail.com`
