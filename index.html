@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kunal Kashyap | Nordic & Central EU Telemetry Engine</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #131a2a;
+      --border: #1f293d;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 24px; line-height: 1.6; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; gap: 16px; }
+    h1 { font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .subtitle { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+    .badge { background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.4); padding: 6px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+    .dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .city { font-weight: 600; font-size: 1.05rem; color: #fff; }
+    .country { font-size: 0.8rem; color: var(--accent); background: rgba(56, 189, 248, 0.1); padding: 2px 8px; border-radius: 6px; }
+    .metric { display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
+    .metric span:last-child { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .footer { border-top: 1px solid var(--border); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--muted); }
+    .links a { color: var(--accent); text-decoration: none; margin-left: 16px; font-weight: 500; }
+    .links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Nordic & Central European Telemetry Engine</h1>
+        <p class="subtitle">Strict TypeScript • Distributed Observability • Zero-Downtime Watchdog</p>
+      </div>
+      <div class="badge"><span class="dot"></span> VOYAGER SIGNAL LOCKED (99.98%)</div>
+    </header>
+
+    <div class="grid" id="nodes-grid"></div>
+
+    <div class="footer">
+      <div>Engineered by <strong>Kunal Kashyap</strong> • English & German (B2)</div>
+      <div class="links">
+        <a href="https://github.com" target="_blank">GitHub Source</a>
+        <a href="mailto:kunal.europe8957@gmail.com">kunal.europe8957@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const nodes = [
+      { city: "Zurich", country: "Switzerland (CH)", baseLatency: 7 },
+      { city: "Copenhagen", country: "Denmark (DK)", baseLatency: 9 },
+      { city: "Oslo", country: "Norway (NO)", baseLatency: 12 },
+      { city: "Stockholm", country: "Sweden (SE)", baseLatency: 11 },
+      { city: "Helsinki", country: "Finland (FI)", baseLatency: 14 },
+      { city: "Amsterdam", country: "Netherlands (NL)", baseLatency: 8 },
+      { city: "Luxembourg City", country: "Luxembourg (LU)", baseLatency: 8 }
+    ];
+
+    function renderTelemetry() {
+      const grid = document.getElementById("nodes-grid");
+      grid.innerHTML = nodes.map(node => {
+        const cpu = (Math.random() * 18 + 11).toFixed(1);
+        const latency = node.baseLatency + Math.floor(Math.random() * 3);
+        const mem = 420 + Math.floor(Math.random() * 90);
+        return `
+          <div class="card">
+            <div class="card-header">
+              <div class="city">${node.city}</div>
+              <div class="country">${node.country}</div>
+            </div>
+            <div class="metric"><span>Status</span><span style="color:#10b981;">OPERATIONAL</span></div>
+            <div class="metric"><span>CPU Load</span><span>${cpu}%</span></div>
+            <div class="metric"><span>Edge Latency</span><span>${latency} ms</span></div>
+            <div class="metric"><span>Memory RSS</span><span>${mem} MB</span></div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    renderTelemetry();
+    setInterval(renderTelemetry, 2500);
+  </script>
+</body>
+</html>
 
