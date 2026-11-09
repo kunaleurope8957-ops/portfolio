@@ -34,8 +34,6 @@ Actively establishing high-impact technical engagements and filtering for enterp
 Direct communication channels are open for global engineering managers and technical leads:
 
 * 📧 **Professional Email:** [kunal.europe8957@gmail.com](mailto:kunal.europe8957@gmail.com)
-* 💬 **WhatsApp Quick Connect:**
-(https://wa.me)
 * 🌐 **Production Source:** [GitHub Infrastructure](https://github.com)
 * 📊 **Live System Endpoint:** [Interactive Telemetry Portfolio](https://github.io)
 
