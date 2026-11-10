@@ -1,0 +1,56 @@
+import { create } from 'zustand';
+import { immer } from 'zustand/middleware/immer';
+
+export interface NodeMetrics {
+  nodeId: string;
+  region: 'Zurich-CH' | 'Copenhagen-DK' | 'Oslo-NO' | 'Stockholm-SE' | 'Helsinki-FI' | 'Amsterdam-NL' | 'Luxembourg-LU';
+  cpuLoadPercentage: number;
+  edgeLatencyMs: number;
+  memoryRssMegabytes: number;
+  status: 'OPERATIONAL' | 'DEGRADED' | 'CRITICAL_FAILOVER';
+  lastPingTimestamp: number;
+}
+
+interface TelemetryState {
+  nodes: Record<string, NodeMetrics>;
+  activeVoyagerSignalLocked: boolean;
+  
+  // Actions
+  upsertNodeMetric: (metric: NodeMetrics) => void;
+  updateNodeStatus: (nodeId: string, status: NodeMetrics['status']) => void;
+  purgeStaleNodes: (maxAgeMs: number) => void;
+}
+
+/**
+ * High-Performance Global State Hub for European Edge Telemetry
+ * Powered by Zustand & Immer for immutable state transitions at scale.
+ */
+useTelemetryStore = create<TelemetryState>()(
+  immer((set) => ({
+    nodes: {},
+    activeVoyagerSignalLocked: true,
+
+    upsertNodeMetric: (metric) =>
+      set((state) => {
+        state.nodes[metric.nodeId] = metric;
+      }),
+
+    updateNodeStatus: (nodeId, status) =>
+      set((state) => {
+        if (state.nodes[nodeId]) {
+          state.nodes[nodeId].status = status;
+          state.nodes[nodeId].lastPingTimestamp = Date.now();
+        }
+      }),
+
+    purgeStaleNodes: (maxAgeMs) =>
+      set((state) => {
+        const threshold = Date.now() - maxAgeMs;
+        for (const id of Object.keys(state.nodes)) {
+          if (state.nodes[id].lastPingTimestamp < threshold) {
+            delete state.nodes[id];
+          }
+        }
+      }),
+  }))
+);
